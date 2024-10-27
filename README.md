@@ -6,7 +6,7 @@ To develop a Django application to store and retrieve data from a bank loan data
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-![Alt text](Untitled-1.png)
+![Alt text](Untitled-3.png)
 
 ## DESIGN STEPS
 
@@ -31,11 +31,11 @@ from django.contrib import adming
 class Bank(models.Model):
 	Name=models.CharField(max_length=20)
 	AccNo=models.IntegerField(primary_key="AccNo")
-	PhoneNo=models.Integerfield()
+	PhoneNo=models.Integerfield(max_length=10)
     LoanAmt=models.IntegerField()
 	Interest=models.IntegerField()
 class BankAdmin(admin.ModelAdmin):
-	list_display=('Name','AccNo','LoanAmt','Interest')
+	list_display=('Name','AccNo','PhoneNo','LoanAmt','Interest')
 	
 admin.py
 
@@ -49,7 +49,7 @@ admin.site.register(Bank,BankAdmin)
 
 ## OUTPUT
 
-![Alt text](<Screenshot 2024-10-26 141903.png>)
+![Alt text](<Screenshot 2024-10-26 183229.png>)
 
 
 ## RESULT
